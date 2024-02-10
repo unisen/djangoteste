@@ -1,0 +1,193 @@
+
+ou externo, um programa operável ou um arquivo em lotes.
+
+(venv) F:\python-unisen\djangoteste>cd myproject
+
+(venv) F:\python-unisen\djangoteste\myproject>python manage.py startapp myapp
+
+(venv) F:\python-unisen\djangoteste\myproject>python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+February 09, 2024 - 20:58:07
+Django version 4.2.10, using settings 'myproject.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+
+(venv) F:\python-unisen\djangoteste\myproject>python manage.py collectstatic
+
+You have requested to collect static files at the destination
+location as specified in your settings.
+
+This will overwrite existing files!
+Are you sure you want to do this?
+
+Type 'yes' to continue, or 'no' to cancel: yes
+Traceback (most recent call last):
+  File "manage.py", line 22, in <module>
+    main()
+  File "manage.py", line 18, in main
+    execute_from_command_line(sys.argv)
+  File "F:\python-unisen\djangoteste\venv\lib\site-packages\django\core\management\__init__.py", line 442, in execute_from_command_line
+    utility.execute()
+  File "F:\python-unisen\djangoteste\venv\lib\site-packages\django\core\management\__init__.py", line 436, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "F:\python-unisen\djangoteste\venv\lib\site-packages\django\core\management\base.py", line 412, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "F:\python-unisen\djangoteste\venv\lib\site-packages\django\core\management\base.py", line 458, in execute
+    output = self.handle(*args, **options)
+  File "F:\python-unisen\djangoteste\venv\lib\site-packages\django\contrib\staticfiles\management\commands\collectstatic.py", line 209, in handle
+    collected = self.collect()
+  File "F:\python-unisen\djangoteste\venv\lib\site-packages\django\contrib\staticfiles\management\commands\collectstatic.py", line 135, in collect
+    handler(path, prefixed_path, storage)
+  File "F:\python-unisen\djangoteste\venv\lib\site-packages\django\contrib\staticfiles\management\commands\collectstatic.py", line 368, in copy_file
+    if not self.delete_file(path, prefixed_path, source_storage):
+  File "F:\python-unisen\djangoteste\venv\lib\site-packages\django\contrib\staticfiles\management\commands\collectstatic.py", line 278, in delete_file
+    if self.storage.exists(prefixed_path):
+  File "F:\python-unisen\djangoteste\venv\lib\site-packages\django\core\files\storage\filesystem.py", line 165, in exists
+    return os.path.lexists(self.path(name))
+  File "F:\python-unisen\djangoteste\venv\lib\site-packages\django\contrib\staticfiles\storage.py", line 39, in path
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: You're using the staticfiles app without having set the STATIC_ROOT setting to a filesystem path.
+
+(venv) F:\python-unisen\djangoteste\myproject>python manage.py collectstatic 
+
+You have requested to collect static files at the destination
+location as specified in your settings.
+
+This will overwrite existing files!
+Are you sure you want to do this?
+
+Type 'yes' to continue, or 'no' to cancel: yes
+Traceback (most recent call last):
+  File "manage.py", line 22, in <module>
+    main()
+  File "manage.py", line 18, in main
+    execute_from_command_line(sys.argv)
+  File "F:\python-unisen\djangoteste\venv\lib\site-packages\django\core\management\__init__.py", line 442, in execute_from_command_line
+    utility.execute()
+  File "F:\python-unisen\djangoteste\venv\lib\site-packages\django\core\management\__init__.py", line 436, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "F:\python-unisen\djangoteste\venv\lib\site-packages\django\core\management\base.py", line 412, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "F:\python-unisen\djangoteste\venv\lib\site-packages\django\core\management\base.py", line 458, in execute
+    output = self.handle(*args, **options)
+  File "F:\python-unisen\djangoteste\venv\lib\site-packages\django\contrib\staticfiles\management\commands\collectstatic.py", line 209, in handle
+    collected = self.collect()
+  File "F:\python-unisen\djangoteste\venv\lib\site-packages\django\contrib\staticfiles\management\commands\collectstatic.py", line 135, in collect
+    handler(path, prefixed_path, storage)
+  File "F:\python-unisen\djangoteste\venv\lib\site-packages\django\contrib\staticfiles\management\commands\collectstatic.py", line 368, in copy_file
+    if not self.delete_file(path, prefixed_path, source_storage):
+  File "F:\python-unisen\djangoteste\venv\lib\site-packages\django\contrib\staticfiles\management\commands\collectstatic.py", line 278, in delete_file
+    if self.storage.exists(prefixed_path):
+  File "F:\python-unisen\djangoteste\venv\lib\site-packages\django\core\files\storage\filesystem.py", line 165, in exists
+    return os.path.lexists(self.path(name))
+  File "F:\python-unisen\djangoteste\venv\lib\site-packages\django\contrib\staticfiles\storage.py", line 39, in path
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: You're using the staticfiles app without having set the STATIC_ROOT setting to a filesystem path.
+
+(venv) F:\python-unisen\djangoteste\myproject>python manage.py migrate       
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying sessions.0001_initial... OK
+
+(venv) F:\python-unisen\djangoteste\myproject>python manage.py runserver     
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2024 - 20:59:15
+Django version 4.2.10, using settings 'myproject.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+[09/Feb/2024 20:59:19] "GET / HTTP/1.1" 200 33
+Not Found: /favicon.ico
+[09/Feb/2024 20:59:19] "GET /favicon.ico HTTP/1.1" 404 2226
+
+ *  History restored 
+
+Microsoft Windows [versão 10.0.19045.3930]
+(c) Microsoft Corporation. Todos os direitos reservados.
+
+(venv) F:\python-unisen\djangoteste>python manage.py runserve
+python: can't open file 'manage.py': [Errno 2] No such file or directory
+
+(venv) F:\python-unisen\djangoteste>cd myproject             
+
+(venv) F:\python-unisen\djangoteste\myproject>python manage.py runserve
+Traceback (most recent call last):
+  File "manage.py", line 11, in main
+    from django.core.management import execute_from_command_line
+ModuleNotFoundError: No module named 'django'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "manage.py", line 22, in <module>
+    main()
+  File "manage.py", line 13, in main
+    raise ImportError(
+ImportError: Couldn't import Django. Are you sure it's installed and available on your PYTHONPATH environment variable? Did you forget to activate a virtual environment?
+
+(venv) F:\python-unisen\djangoteste\myproject>cd..                      
+
+(venv) F:\python-unisen\djangoteste>disable
+F:\python-unisen\djangoteste>enable
+
+(venv) F:\python-unisen\djangoteste>cd myproject
+
+(venv) F:\python-unisen\djangoteste\myproject>python manage.py runserve
+Unknown command: 'runserve'. Did you mean runserver?
+Type 'manage.py help' for usage.
+
+(venv) F:\python-unisen\djangoteste\myproject>python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions
+Running migrations:
+  No migrations to apply.
+
+(venv) F:\python-unisen\djangoteste\myproject>python manage.py runserve
+Unknown command: 'runserve'. Did you mean runserver?
+Type 'manage.py help' for usage.
+
+(venv) F:\python-unisen\djangoteste\myproject>python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2024 - 22:35:53
+Django version 4.2.10, using settings 'myproject.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+[09/Feb/2024 22:35:57] "GET / HTTP/1.1" 200 33
+Not Found: /favicon.ico
+[09/Feb/2024 22:35:57] "GET /favicon.ico HTTP/1.1" 404 2226
+
+(venv) F:\python-unisen\djangoteste\myproject>cd..
+
+(venv) F:\python-unisen\djangoteste>py -m pip install ^A
